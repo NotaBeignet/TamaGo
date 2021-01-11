@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<dialogue>
+	<window id="0">
+		<line character="Mami">Bonsoir mon chéri.</line>
+		<line character="Mami">Comment s'est passé ton dernier jour ?</line>
+		<line character="Mami">J'espère qu'ils ont été gentils avec toi.</line>
+		<window id="1">
+			<line character="Mami">Ta fille a appelé ce matin.</line>
+		</window>
+		<line character="Mami">Ils veulent passer nous voir ce weekend !</line>
+	</window>
+</dialogue>
