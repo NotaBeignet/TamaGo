@@ -6,6 +6,8 @@ public enum Region { Region1, COUNT }
 
 public class GameManager : Singleton<GameManager>
 {
+    [SerializeField]
+    List<CharacteristicsScriptable> m_listCharacteristics;
 
     [SerializeField]
     PlayerController m_player;

@@ -43,6 +43,7 @@ public void RegisterOnArriveToStation(Action<object,MessageEventArgs> a_action)
 //ResolutionUpdated
 //Burstable
 //KeepScoreDisplay;float
+//CharacteristicUpdated
 //##END##
 
 //------------ END - LIST OF EVENTS -------------//
@@ -700,7 +701,33 @@ public class EventManager : Singleton<EventManager>
 			OnKeepScoreDisplay.Invoke(a_sender, a_1float);
 		}
 	}
-// ----- END AUTO GENERATED CODE ----- //
+
+	// --- EVENT --- CharacteristicUpdated --- //
+
+
+	protected event Action<object> OnCharacteristicUpdated;
+	public void RegisterOnCharacteristicUpdated(Action<object> a_action)
+	{
+		OnCharacteristicUpdated += a_action;
+	}
+
+
+	public void UnRegisterOnCharacteristicUpdated(Action<object> a_action)
+	{
+		OnCharacteristicUpdated -= a_action;
+	}
+
+
+	public void InvokeOnCharacteristicUpdated(object a_sender)
+	{
+		if (OnCharacteristicUpdated != null)
+		{
+			OnCharacteristicUpdated.Invoke(a_sender);
+		}
+	}
+
+
+	// ----- END AUTO GENERATED CODE ----- //
 
 }
 

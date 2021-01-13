@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimerFactory : Singleton<TimerFactory> {
+public class TimerFactory : Singleton<TimerFactory> 
+{
 
 	public Timer GetTimer()
     {

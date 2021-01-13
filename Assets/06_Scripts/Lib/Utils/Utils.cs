@@ -52,7 +52,7 @@ public static class Utils
 
     public static bool RandomBool(float probability, System.Random r = null)
     {
-        return RandomFloat(0,100,r) <= probability;
+        return RandomFloat(0,1,r) <= probability;
     }
 
 
