@@ -9,6 +9,14 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     List<CharacteristicsScriptable> m_listCharacteristics;
 
+    public void InitializeCharacter()
+    {
+        foreach (CharacteristicsScriptable characteristic in m_listCharacteristics)
+        {
+            characteristic.Initialize();
+        }
+    }
+
     [SerializeField]
     PlayerController m_player;
 
@@ -46,6 +54,7 @@ public class GameManager : Singleton<GameManager>
     //[Header("Debug")]
  
 #endif
+
 
     protected override void Awake()
     {
