@@ -39,6 +39,8 @@ public class CharacteristicsScriptable : ScriptableObject
 
     }
 
+    public CHARACTERISTIC Name { get => m_name; }
+
     public void IncValue(float a_value)
     {
         Current += a_value;

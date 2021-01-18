@@ -9,6 +9,11 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     List<CharacteristicsScriptable> m_listCharacteristics;
 
+    public CharacteristicsScriptable GetCharacteristic(CHARACTERISTIC a_name)
+    {
+        return m_listCharacteristics.Find(x => x.Name.Equals(a_name));
+    }
+
     public void InitializeCharacter()
     {
         foreach (CharacteristicsScriptable characteristic in m_listCharacteristics)

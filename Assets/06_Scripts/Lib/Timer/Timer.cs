@@ -7,7 +7,14 @@ public class Frequency
 {
     float m_frequency;
     Action m_callback;
+    //todo check if enough to avoid overflow
     int m_nextFrequency = 1;
+
+    public Frequency(float frequency, Action callback)
+    {
+        m_frequency = frequency;
+        m_callback = callback;
+    }
 
     public void CheckFrequency(float a_currentTime)
     {
@@ -38,7 +45,24 @@ public class Timer : MonoBehaviour
     Action<Timer> m_listeners;
 
     public bool IsUnscale { get => m_isUnscale; set => m_isUnscale = value; }
-    public float FinishTime { get => m_finishTime; set => m_finishTime = value; }
+    public float FinishTime 
+    { 
+        get
+        {
+            return m_finishTime;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                m_finishTime = Mathf.Infinity;
+            }
+            else
+            {
+                m_finishTime = value;
+            }
+        }
+    }
     public Action Callback { get => m_callback; set => m_callback = value; }
     public Action<Timer> Listeners { get => m_listeners; set => m_listeners = value; }
 
@@ -83,11 +107,13 @@ public class Timer : MonoBehaviour
         {
             m_frequencies[i].CheckFrequency(m_currentTime);
         }
+
         if (IsTimeUp())
         {
             m_running = false;
             Callback?.Invoke();
         }
+
         if(Listeners != null)
         {
             Listeners.Invoke(this);
