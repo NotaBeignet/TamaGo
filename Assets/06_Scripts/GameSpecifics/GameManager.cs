@@ -9,16 +9,23 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     List<CharacteristicsScriptable> m_listCharacteristics;
 
+    [SerializeField]
+    List<Buff> m_listBuffs;
+
     public CharacteristicsScriptable GetCharacteristic(CHARACTERISTIC a_name)
     {
         return m_listCharacteristics.Find(x => x.Name.Equals(a_name));
     }
 
-    public void InitializeCharacter()
+    public void Initialize()
     {
         foreach (CharacteristicsScriptable characteristic in m_listCharacteristics)
         {
             characteristic.Initialize();
+        }
+        foreach(Buff buff in m_listBuffs)
+        {
+            buff.Start();
         }
     }
 

@@ -2,13 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "Buff", menuName = "Buff", order = 2)]
 public class Buff : ScriptableObject
 {
-
+    [SerializeField]
     CHARACTERISTIC m_characteristic;
+
+    [SerializeField]
     float m_duration;
+
+    [SerializeField]
     float m_frequency;
+
+    [SerializeField]
     float m_intensity;
+
     Timer m_timer;
 
     public void Start()

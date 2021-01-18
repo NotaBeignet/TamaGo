@@ -1590,6 +1590,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ddfc7b381cf930e45ae199f0053a3f1d, type: 2}
   - {fileID: 11400000, guid: ec75c41672a71b343ab9e24fc987363b, type: 2}
   - {fileID: 11400000, guid: 2d4a66c0f9317054883ac146bb3498a6, type: 2}
+  m_listBuffs:
+  - {fileID: 11400000, guid: 331e11924e3b26b4e80f8861e6e8a584, type: 2}
   m_player: {fileID: 0}
   m_cameraParams:
     m_FOV: 15
