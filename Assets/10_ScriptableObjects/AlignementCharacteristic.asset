@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456229038923d854ba6b539ebff5bcdf, type: 3}
   m_Name: AlignementCharacteristic
   m_EditorClassIdentifier: 
-  m_name: Alignement
-  m_min: -50
-  m_max: 50
-  m_current: 0
+  m_name: 2
+  m_minInit: 0
+  m_maxInit: 0
+  m_currentInit: 0

@@ -97,7 +97,7 @@ public class GameManager : Singleton<GameManager>
     {
         IsPause = true;
         m_sleepTimer.FinishTime = a_duration;
-        m_sleepTimer.RestartTimer();
+        m_sleepTimer.StartTimer();
     }
 
 }

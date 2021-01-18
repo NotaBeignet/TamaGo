@@ -74,7 +74,7 @@ public abstract class Lerp<T> : MonoBehaviour
     {
         m_callback(LerpValue(0));
         m_isRunning = true;
-        m_timer.RestartTimer();
+        m_timer.StartTimer();
     }
 
     public void Stop()

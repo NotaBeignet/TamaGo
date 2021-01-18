@@ -215,17 +215,19 @@ public class CameraManager : Singleton<CameraManager>
         m_kickIntensity = a_intensity;
         m_kickDirection = a_direction.normalized;
         m_isKickOn = true;
-        m_timerKick.StartTimer(m_kickOnDuration, () =>
+        m_timerKick.InitializeTimer(m_kickOnDuration, () =>
         {
             m_isKickOn = false;
-            m_timerKick.StartTimer(m_kickBackDuration, null);
+            m_timerKick.InitializeTimer(m_kickBackDuration, null);
+            m_timerKick.StartTimer();
         });
+        m_timerKick.StartTimer();
     }
     public void Vertigo(float a_time, float a_distance, float a_FOVDelta)
     {
         m_isVertigo = true;
         m_vertigoTimer.FinishTime = a_time;
-        m_vertigoTimer.RestartTimer();
+        m_vertigoTimer.StartTimer();
         m_vertigoDeltaFOV = a_FOVDelta;
         m_vertigoTargetOriginFOV = Camera.fieldOfView;
         m_vertigoTargetDistance = a_distance;

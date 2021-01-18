@@ -32,7 +32,7 @@ public class Flash : Singleton<Flash>
     {
         m_image.color = a_color ?? Color.white;
         m_image.enabled = true;
-        m_timer.RestartTimer();
+        m_timer.StartTimer();
     }
 
 }

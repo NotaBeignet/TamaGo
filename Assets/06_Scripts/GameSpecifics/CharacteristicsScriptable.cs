@@ -50,4 +50,5 @@ public class CharacteristicsScriptable : ScriptableObject
         m_max = m_maxInit;
         Current = m_currentInit;
     }
+    
 }

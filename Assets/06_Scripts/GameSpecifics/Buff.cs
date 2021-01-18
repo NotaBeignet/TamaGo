@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Buff : MonoBehaviour
+public class Buff : ScriptableObject
 {
 
     CHARACTERISTIC m_characteristic;
@@ -11,16 +11,4 @@ public class Buff : MonoBehaviour
     float m_intensity;
 
     // Apply Buff 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -108,7 +108,8 @@ public class UtilsAnimator : MonoBehaviour
             return;
         }
 
-        m_timerShake.StartTimer(a_time, () => { IsShaking = false; m_transform.localPosition = m_originalPos; });
+        m_timerShake.InitializeTimer(a_time, () => { IsShaking = false; m_transform.localPosition = m_originalPos; });
+        m_timerShake.StartTimer();
         IsShaking = true;
         m_isShakingInversed = a_IsInversed;
         m_originalPos = m_transform.localPosition;
@@ -124,7 +125,7 @@ public class UtilsAnimator : MonoBehaviour
             return;
         }
 
-        m_timerBubble.StartTimer(a_time, 
+        m_timerBubble.InitializeTimer(a_time, 
             () =>  {
                 IsBubble = false;
                 m_transform.localScale = m_originalScale;
@@ -133,7 +134,7 @@ public class UtilsAnimator : MonoBehaviour
                     Bubble(a_time, a_intensity, a_bounciness, a_percentTimeScaleUp, a_loop);
                 }
             });
-
+        m_timerBubble.StartTimer();
         IsBubble = true;
         m_originalScale = m_transform.localScale;
         m_intensityBubble = a_intensity;
@@ -155,7 +156,8 @@ public class UtilsAnimator : MonoBehaviour
             return;
         }
 
-        m_timerScaleUp.StartTimer(a_time);
+        m_timerScaleUp.InitializeTimer(a_time);
+        m_timerScaleUp.StartTimer();
         IsScaleUp = true;
         m_finalSizeScaleUp = a_finalSize;
         m_scaleUpBounciness = a_bounciness;
@@ -172,7 +174,8 @@ public class UtilsAnimator : MonoBehaviour
             return;
         }
 
-        m_timerScaleDown.StartTimer(a_time);
+        m_timerScaleDown.InitializeTimer(a_time);
+        m_timerScaleDown.StartTimer();
         m_originalScale = m_transform.localScale;
         IsScaleDown = true;
         m_finalSizeScaleDown = a_finalSize;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 456229038923d854ba6b539ebff5bcdf, type: 3}
   m_Name: HygieneCharacteristic
   m_EditorClassIdentifier: 
-  m_name: Hygiene
-  m_min: 0
-  m_max: 100
-  m_current: 100
+  m_name: 1
+  m_minInit: 0
+  m_maxInit: 0
+  m_currentInit: 0
