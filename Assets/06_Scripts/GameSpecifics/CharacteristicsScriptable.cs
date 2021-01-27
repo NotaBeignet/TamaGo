@@ -10,7 +10,7 @@ public class CharacteristicsScriptable : ScriptableObject
 {
     [SerializeField]
     CHARACTERISTIC m_name;
-    
+
     float m_min;
     float m_max;
     float m_current;
@@ -24,6 +24,12 @@ public class CharacteristicsScriptable : ScriptableObject
     [SerializeField]
     float m_currentInit;
 
+#if UNITY_EDITOR
+    [Header("Debug")]
+    [SerializeField]
+    bool m_debugLog;
+#endif
+
     public float Current 
     { 
         
@@ -35,6 +41,13 @@ public class CharacteristicsScriptable : ScriptableObject
         {
             m_current = Mathf.Clamp(value, m_min, m_max);
             EventManager.Instance.InvokeOnCharacteristicUpdated(this);
+#if UNITY_EDITOR
+            if (m_debugLog)
+            {
+                Debug.Log("Charac " + m_name + " = " + m_current + " / " + m_max);
+            }
+
+#endif
         }
 
     }

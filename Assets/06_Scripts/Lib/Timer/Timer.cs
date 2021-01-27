@@ -20,7 +20,7 @@ public class Frequency
     {
         if (a_currentTime >= m_frequency * m_nextFrequency)
         {
-            ++m_frequency;
+            ++m_nextFrequency;
             m_callback?.Invoke();
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,9 +79,23 @@ public class GameManager : Singleton<GameManager>
     void Start()
     {
         CameraManager.Instance.CurrentStrategy = new Camera25D(m_cameraParams);
+        Initialize();
+        EventManager.Instance.RegisterOnCharacteristicUpdated(DeathCheck);
     }
 
-    
+    private void DeathCheck(object obj)
+    {
+        CharacteristicsScriptable charac = (CharacteristicsScriptable)obj;
+        if (charac == null)
+        {
+            return;
+        }
+        if (charac.Name == CHARACTERISTIC.HEALTH && charac.Current <= 0)
+        {
+            Debug.Log("The Tama is dead :(");
+            Initialize();
+        }
+    }
 
     float m_lastTimeScale;
     void Update()
